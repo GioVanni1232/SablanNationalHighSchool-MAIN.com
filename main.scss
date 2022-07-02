@@ -1,0 +1,693 @@
+:root{
+  --color:rgb(214, 32, 32);
+ 
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+ 
+}
+
+ul{
+  padding: 0;
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  text-align: center;
+  padding: 1em 1.5em;
+}
+
+.sidebar{
+  display: none;
+}
+
+.sidebar-left{
+  display: none;
+}
+
+.header-container{
+  padding: 0 1.5em;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 90;
+ 
+}
+
+.search-container{
+
+  display: none;
+
+   input{
+    padding: 0.5em .5em .5em 0.5em;
+    appearance: none;
+    outline: none;
+    border: none;
+   
+  }
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  border-bottom: solid 1px #f2f2f2;
+ 
+  
+  
+  .about{
+    color: var(--color);
+    font-weight:700;
+    font-size: 1.2em;
+    
+  
+    transition: all .15s ease;
+    
+    &:hover{
+      color:  lightpink;
+    }
+  }
+
+  nav{
+    margin: 0;
+    
+    
+    ul{
+      display: flex;
+
+      li{
+        margin-left: 1em;
+
+        a{
+          color: black;
+          font-weight: 600;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.background-image{
+  background-image: url(images/faculty.jpg);
+  width: 100%;
+  height:30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 45px;
+  animation: background-path 3s forwards ;
+  opacity: 0;
+ 
+
+ 
+   
+  .container{
+    
+   .school-name{
+      font-family: cursive;
+      font-weight: 900;
+      color:rgb(0, 0, 0);
+      color: white;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      animation: school-name-load 2s forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
+     span{
+      text-transform: uppercase;
+      }
+    }
+
+    
+  }
+  
+} 
+
+@keyframes background-path {
+  from{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  to{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+   
+  }
+}
+
+@keyframes school-name-load {
+  from{
+    transform: translateY(-30px);
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+   
+  }
+  
+}
+
+.pictures{
+ 
+  div{
+  
+    img{
+      width: 70%;
+      margin-left: 15px;
+      opacity: 0;
+      animation: logo-entry 2s ease forwards;
+      animation-delay: 0.5s;
+    }
+  }
+}
+
+@keyframes logo-entry {
+  from{
+    transform: translateY(-30px);
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.background-color[data-scroll="in"]{
+  opacity: 1;
+  
+}
+
+.background-color{
+  background-color: var(--color);
+  padding-top: 50px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: all 3s ease;
+  
+}
+
+.about-area[data-scroll="in"]{
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.about-area{
+ 
+  padding: 2em 0;
+  border-radius: 20px;
+  opacity: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 1s ease;
+ background-color: white;
+  
+
+
+  h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    color: var(--color);
+    text-decoration: solid;
+    font-size: 2em;
+    
+    
+  }
+  
+ 
+
+  .about-contents{
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+  .right{
+    display: flex;
+    flex-direction: column;
+
+    h2{
+      font-size: 1.3em;
+      font-weight: bold;
+      margin:0;
+    }
+
+    p{
+      font-size: 0.8em;
+      font-weight: 300;
+      text-align: center;
+      
+     
+    }
+  }
+
+  .image {
+    
+    img{
+    width: 200px;
+   
+    padding: 5px;
+    
+    }
+  }
+
+  
+}
+
+.about-name::after{
+  content: url("images/icons8-about-24.png");
+  margin-left: 10px;
+}
+
+.news-name::after{
+  content: url("images/icons8-news-24.png");
+  margin-left: 10px;
+}
+
+.activity-name::after{
+  content: url("images/icons8-stretching-50.png");
+  margin-left: 10px;
+  position: absolute;
+  top: -10px;
+}
+
+.contact-name::after{
+  content: url("images/icons8-contact-50.png");
+  margin-left: 10px;
+  position: absolute;
+  top: -8px;
+}
+
+
+.news-area[data-scroll="in"]
+{
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.news-area{
+  margin-top: 50px;
+  background-color: white;
+  
+  padding: 2em 0;
+  border-radius: 20px;
+  opacity: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 1s ease;
+  
+ h1{
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+  color: var(--color);
+  text-decoration: solid;
+  font-size: 2em;
+  
+ }
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+      font-size: 1em;
+      margin: 0;
+    }
+
+    img{
+      width: 50%;
+     
+     
+      margin-top: 1em;
+    }
+
+    button{
+      border: none;
+      font-size: 1em;
+      margin-top: 1em;
+      border: 1px solid black;
+      background-color: white;
+      padding: 10px;
+      border-radius: 20px;
+      transition: box-shadow 0.15s ease;
+
+      &:hover{
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      }
+    }
+
+    a{
+      font-family: Arial;   
+      font-weight: bold;
+      color: black
+      
+    }
+  }
+}
+
+.school-activities[data-scroll="in"]
+{
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+
+.school-activities{
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  opacity: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 2s ease;
+  h1{
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    color: var(--color);
+    text-decoration: solid;
+    font-size: 2em;
+    position: relative;
+  }
+
+  div{
+    
+    p{
+      font-size: 1em;
+      
+      span{
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .humms-images{
+    
+    padding: 1em 1em 0 1em;
+    box-shadow: inset 0 0 5px var(--color) ;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    img{
+      width:100%;
+      border-radius: 20px;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-bottom: 15px;
+
+      
+    }
+  }
+
+  a{
+    color:black;
+    font-size: 1em;
+    text-decoration: underline;
+
+    &:hover{
+      opacity: 0.3;
+    }
+  }
+}
+
+.contact-section[data-scroll="in"]
+{
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.contact-section{
+  background: rgb(255,55,55);
+  background: linear-gradient(61deg, rgba(255,55,55,1) 0%, rgba(252,48,48,0.9192051820728291) 39%, rgba(193,119,119,1) 100%, rgba(236,161,161,1) 121%);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  opacity: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 2s ease;
+  h1{
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 2em;
+    position: relative;
+  }
+
+  .contact{    
+     
+      form{
+        display: flex;
+        flex-direction: column;
+
+        input,textarea{
+          appearance: none;
+          outline: none;
+          border: none;
+          padding: 10px 0 10px 20px;
+          margin-bottom: 10px;
+          font-family:'Poppins', sans-serif;
+        }
+
+        textarea{
+          padding-bottom: 50px;
+        }
+
+        .submit{
+          padding: unset;
+          width: 100px;
+          padding: 5px 0;
+          background-color: black;
+          color: white;
+          font-size: 1em;
+
+          &:focus{
+          opacity: 0;
+          }
+        }
+      }
+      
+      div{
+
+        iframe{
+          width: 100%;
+          
+        }
+      }
+    
+
+  }
+}
+
+
+
+
+
+
+@media only screen and (min-width: 600px){
+  .pictures{
+    .container{
+      img{
+        width: 350px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px){
+
+  
+  .humms-images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    object-fit: contain;
+    
+    
+    img{
+      width: 30%;
+      height: 90%;
+      object-fit: contain;
+      border-radius: unset;
+    }
+  }
+
+    
+  
+    
+}
+
+  
+
+@media only screen and (min-width: 1000px){
+
+  .wrapper{
+    width: 500px;
+    margin: 0 auto;
+    
+  }
+
+  .background-color{
+    width: 100%;
+  }
+
+  .search-container{
+    display: block;
+    padding-left: 0px;
+    
+   
+   
+  }
+  
+  .background-image{
+    background-image: url(images/faculty.jpg);
+    width: 100%;
+    height:35vh;
+    background-position: center;
+    margin-top: 50px;
+  }
+
+  header{
+    background-color: white;
+    width: 40%;
+    padding-left: 100%;
+    position: fixed;
+   right: 0;
+   top: 0;
+   justify-content: center;
+   
+   
+   .about{
+    margin-right: 100px;
+   }
+  }
+  
+  .sidebar{
+    display: block;
+  }
+
+  .sidebar-left{
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1300px){
+
+  .wrapper{
+    width: 750px;
+    margin: 0 auto;
+    
+  }
+
+  .contact{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 50px;
+
+    div{
+      iframe{
+        height: 100%;
+      }
+    }
+  }  
+
+  .contact-section{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+
+.split-two{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+
+  .about-area{
+    width: 100%;
+  }
+
+  .about-contents{
+    display: flex;
+    flex-direction: column;
+
+    .right{
+      p{
+        font-size: 1em;
+      }
+    }
+  }
+
+  .image{
+    display: block;
+
+    img{
+      width: 50%;
+    }
+  }
+  .news-area{
+    margin-top: 0;
+
+    h1{
+      margin-top: 0;
+      margin-bottom: 19.920px;
+    }
+  }
+
+
+ 
+}
+}
+
+@media only screen and (min-width: 1500px){
+
+  .wrapper{
+    width: 850px;
+    margin: auto auto;
+    
+  }
+
+  .news-area{
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: 0.5s ease;
+  }
+
+}
+
+@media only screen and (min-width: 1700px){
+  .wrapper{
+    width: 1000px;
+    margin: auto auto;
+    
+  }
+}

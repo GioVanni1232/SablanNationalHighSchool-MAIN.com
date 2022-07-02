@@ -1,0 +1,590 @@
+:root {
+  --color:rgb(214, 32, 32);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  text-align: center;
+  padding: 1em 1.5em;
+}
+
+.sidebar {
+  display: none;
+}
+
+.sidebar-left {
+  display: none;
+}
+
+.header-container {
+  padding: 0 1.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 90;
+}
+
+.search-container {
+  display: none;
+}
+.search-container input {
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  border-bottom: solid 1px #f2f2f2;
+}
+header .about {
+  color: var(--color);
+  font-weight: 700;
+  font-size: 1.2em;
+  transition: all 0.15s ease;
+}
+header .about:hover {
+  color: lightpink;
+}
+header nav {
+  margin: 0;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin-left: 1em;
+}
+header nav ul li a {
+  color: black;
+  font-weight: 600;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.background-image {
+  background-image: url(images/faculty.jpg);
+  width: 100%;
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 45px;
+  -webkit-animation: background-path 3s forwards;
+          animation: background-path 3s forwards;
+  opacity: 0;
+}
+.background-image .container .school-name {
+  font-family: cursive;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  -webkit-animation: school-name-load 2s forwards;
+          animation: school-name-load 2s forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  opacity: 0;
+}
+.background-image .container .school-name span {
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes background-path {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+
+@keyframes background-path {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes school-name-load {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes school-name-load {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.pictures div img {
+  width: 70%;
+  margin-left: 15px;
+  opacity: 0;
+  -webkit-animation: logo-entry 2s ease forwards;
+          animation: logo-entry 2s ease forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+@-webkit-keyframes logo-entry {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes logo-entry {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.background-color[data-scroll=in] {
+  opacity: 1;
+}
+
+.background-color {
+  background-color: var(--color);
+  padding-top: 50px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: all 3s ease;
+}
+
+.about-area[data-scroll=in] {
+  opacity: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.about-area {
+  padding: 2em 0;
+  border-radius: 20px;
+  opacity: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 1s ease;
+  background-color: white;
+}
+.about-area h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+  color: var(--color);
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  font-size: 2em;
+}
+.about-area .about-contents {
+  display: flex;
+  flex-direction: column;
+}
+.about-area .right {
+  display: flex;
+  flex-direction: column;
+}
+.about-area .right h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0;
+}
+.about-area .right p {
+  font-size: 0.8em;
+  font-weight: 300;
+  text-align: center;
+}
+.about-area .image img {
+  width: 200px;
+  padding: 5px;
+}
+
+.about-name::after {
+  content: url("images/icons8-about-24.png");
+  margin-left: 10px;
+}
+
+.news-name::after {
+  content: url("images/icons8-news-24.png");
+  margin-left: 10px;
+}
+
+.activity-name::after {
+  content: url("images/icons8-stretching-50.png");
+  margin-left: 10px;
+  position: absolute;
+  top: -10px;
+}
+
+.contact-name::after {
+  content: url("images/icons8-contact-50.png");
+  margin-left: 10px;
+  position: absolute;
+  top: -8px;
+}
+
+.news-area[data-scroll=in] {
+  opacity: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.news-area {
+  margin-top: 50px;
+  background-color: white;
+  padding: 2em 0;
+  border-radius: 20px;
+  opacity: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 1s ease;
+}
+.news-area h1 {
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+  color: var(--color);
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  font-size: 2em;
+}
+.news-area div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.news-area div p {
+  font-size: 1em;
+  margin: 0;
+}
+.news-area div img {
+  width: 50%;
+  margin-top: 1em;
+}
+.news-area div button {
+  border: none;
+  font-size: 1em;
+  margin-top: 1em;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  transition: box-shadow 0.15s ease;
+}
+.news-area div button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.news-area div a {
+  font-family: Arial;
+  font-weight: bold;
+  color: black;
+}
+
+.school-activities[data-scroll=in] {
+  opacity: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.school-activities {
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  opacity: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 2s ease;
+}
+.school-activities h1 {
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+  color: var(--color);
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  font-size: 2em;
+  position: relative;
+}
+.school-activities div p {
+  font-size: 1em;
+}
+.school-activities div p span {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.school-activities .humms-images {
+  padding: 1em 1em 0 1em;
+  box-shadow: inset 0 0 5px var(--color);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.school-activities .humms-images img {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-bottom: 15px;
+}
+.school-activities a {
+  color: black;
+  font-size: 1em;
+  text-decoration: underline;
+}
+.school-activities a:hover {
+  opacity: 0.3;
+}
+
+.contact-section[data-scroll=in] {
+  opacity: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.contact-section {
+  background: rgb(255, 55, 55);
+  background: linear-gradient(61deg, rgb(255, 55, 55) 0%, rgba(252, 48, 48, 0.9192051821) 39%, rgb(193, 119, 119) 100%, rgb(236, 161, 161) 121%);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  opacity: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: all 2s ease;
+}
+.contact-section h1 {
+  color: white;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 2em;
+  position: relative;
+}
+.contact-section .contact form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-section .contact form input, .contact-section .contact form textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  padding: 10px 0 10px 20px;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+.contact-section .contact form textarea {
+  padding-bottom: 50px;
+}
+.contact-section .contact form .submit {
+  padding: unset;
+  width: 100px;
+  padding: 5px 0;
+  background-color: black;
+  color: white;
+  font-size: 1em;
+}
+.contact-section .contact form .submit:focus {
+  opacity: 0;
+}
+.contact-section .contact div iframe {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .pictures .container img {
+    width: 350px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .humms-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .humms-images img {
+    width: 30%;
+    height: 90%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    border-radius: unset;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .wrapper {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .background-color {
+    width: 100%;
+  }
+
+  .search-container {
+    display: block;
+    padding-left: 0px;
+  }
+
+  .background-image {
+    background-image: url(images/faculty.jpg);
+    width: 100%;
+    height: 35vh;
+    background-position: center;
+    margin-top: 50px;
+  }
+
+  header {
+    background-color: white;
+    width: 40%;
+    padding-left: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    justify-content: center;
+  }
+  header .about {
+    margin-right: 100px;
+  }
+
+  .sidebar {
+    display: block;
+  }
+
+  .sidebar-left {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .wrapper {
+    width: 750px;
+    margin: 0 auto;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+  }
+  .contact div iframe {
+    height: 100%;
+  }
+
+  .contact-section {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .split-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+  }
+  .split-two .about-area {
+    width: 100%;
+  }
+  .split-two .about-contents {
+    display: flex;
+    flex-direction: column;
+  }
+  .split-two .about-contents .right p {
+    font-size: 1em;
+  }
+  .split-two .image {
+    display: block;
+  }
+  .split-two .image img {
+    width: 50%;
+  }
+  .split-two .news-area {
+    margin-top: 0;
+  }
+  .split-two .news-area h1 {
+    margin-top: 0;
+    margin-bottom: 19.92px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .wrapper {
+    width: 850px;
+    margin: auto auto;
+  }
+
+  .news-area {
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: 0.5s ease;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .wrapper {
+    width: 1000px;
+    margin: auto auto;
+  }
+}/*# sourceMappingURL=main.css.map */

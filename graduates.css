@@ -1,0 +1,183 @@
+
+:root{
+  --color:rgb(214, 32, 32);
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  padding-bottom: 50px;
+}
+header{
+  width: 100%;
+  background-color:var(--color);
+  height: 3em;
+  color: white;
+  font-family: Arial;
+  font-weight: bold;
+  text-align: center;
+  line-height: 3em;
+  position: fixed;
+  z-index: 200;
+}
+
+
+.graduates-grid{
+  display: grid;
+  padding-top: 60px;
+  row-gap: 40px;
+  margin-left: 10px;
+  opacity: 0;
+  animation: open-list 2s ease forwards;
+}
+
+@keyframes open-list {
+  from{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 1% 100%);
+    opacity: 1;
+  }
+  
+}
+
+ button{
+  position: absolute;
+  background: none;
+  border: none;
+  top: 5px;
+  z-index: 20;
+  left: 10px;
+}
+
+button a img{
+  width: 30px;
+  
+}
+
+
+
+
+
+.graduates[data-scroll="in"]{
+
+ opacity: 1;
+  transform: translateY(0);
+}
+
+.graduates{
+  display: flex;
+  background-color: var(--color);
+  padding: 15px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+  width: 440px;
+  
+}
+
+.adviser{
+  display: flex;
+  background-color: var(--color);
+  padding: 15px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+  width: 440px;
+  
+}
+
+.adviser-name h1{
+  margin-left: 25px;
+  color: white;
+}
+
+.adviser-name p{
+  margin-left: 25px;
+}
+
+
+
+.picture{
+  width: 150px;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.picture img{
+  width:100%;
+  height: auto;
+}
+
+.name-section{
+  display: flex;
+  
+}
+
+.name{
+  font-size: 1.1em;
+  font-family: Arial;
+  font-weight: bold;
+  white-space: nowrap;
+  color: white;
+  margin-right: 10px;
+  margin-left: 20px;
+
+}
+
+.strand{
+  font-weight: bold;
+  color: white;
+  font-size: 1.12em;
+ white-space: nowrap;
+}
+
+.second-pic{
+  width: 100px;
+  position: absolute;
+  top: 80px;
+  left:250px;
+ 
+}
+
+
+
+.second-pic img{
+  width:100%;
+  background-color: lightgray;
+  padding: 6px;
+  border-radius: 10px;
+  
+  
+}
+
+
+
+@media only screen and (min-width: 1020px){
+
+  .graduates-grid{
+    grid-template-columns: auto auto;
+    column-gap: 50px
+  }
+   
+}
+
+@media only screen and (min-width: 1500px){
+  .graduates-grid{
+    grid-template-columns: auto auto auto;
+    
+  }
+}
+
+
+
