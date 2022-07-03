@@ -24,11 +24,13 @@ header{
 
 .graduates-grid{
   display: grid;
+  box-sizing: border-box;
   padding-top: 60px;
-  row-gap: 40px;
-  margin-left: 10px;
+  row-gap: 30px;
+  width: 100%;
   opacity: 0;
   animation: open-list 2s ease forwards;
+ 
 }
 
 @keyframes open-list {
@@ -77,40 +79,43 @@ button a img{
   opacity: 0;
   transform: translateY(100px);
   transition: all 1s ease;
-  width: 440px;
+  width:auto;
+  height: auto;
   
 }
 
 .adviser{
-  display: flex;
   background-color: var(--color);
   padding: 15px;
   border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: all 1s ease;
-  width: 440px;
-  
+  height: auto;
+}
+
+.adviser-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .adviser-name h1{
-  margin-left: 25px;
+ 
   color: white;
+  text-align: left;
 }
 
 .adviser-name p{
   margin-left: 25px;
+  text-align: center;
 }
 
 
 
 .picture{
-  width: 150px;
+  width: 110px;
   background-color: lightgray;
-  padding: 10px;
+  padding: 8px;
   border-radius: 10px;
 }
 
@@ -128,10 +133,10 @@ button a img{
   font-size: 1.1em;
   font-family: Arial;
   font-weight: bold;
-  white-space: nowrap;
+  margin-left: 5px;
   color: white;
-  margin-right: 10px;
-  margin-left: 20px;
+  margin-right: 5px;  
+ text-align: left;
 
 }
 
@@ -139,14 +144,15 @@ button a img{
   font-weight: bold;
   color: white;
   font-size: 1.12em;
- white-space: nowrap;
+  white-space: nowrap;
+  margin-left: 5px
 }
 
 .second-pic{
-  width: 100px;
+  width: 70px;
   position: absolute;
-  top: 80px;
-  left:250px;
+  top: 70px;
+  left:230px;
  
 }
 
@@ -169,7 +175,18 @@ button a img{
     grid-template-columns: auto auto;
     column-gap: 50px
   }
-   
+  .picture{
+    width: 180px;
+  }
+
+   .graduates{
+    width: 400px;
+   } 
+  .second-pic{
+    width: 100px;
+    top: 100px;
+    left: 270px;
+  }
 }
 
 @media only screen and (min-width: 1500px){
@@ -177,7 +194,8 @@ button a img{
     grid-template-columns: auto auto auto;
     
   }
+
+  .graduates{
+    width: 450px;
+   }
 }
-
-
-
